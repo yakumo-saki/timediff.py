@@ -1,0 +1,5 @@
+STATE_NAME = "name"
+STATE_TIME = "time"
+
+ANSWER_PREFIX = "ANSWER:"
+ANSWER_KEY = "$$$$$ANSWER$$$$$$"

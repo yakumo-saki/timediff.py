@@ -58,6 +58,9 @@ def parse_time(time):
     time_str = time_str.replace("時間", ":").replace("分", ":").replace("秒", "")
     time_str = time_str.replace(" ", "")
 
+    if (time_str.count(":") == 1):
+        time_str = "00:" + time_str
+
     #dt = datetime.strptime(date, '%Y-%m-%dT%H:%M:%S')
     time = parse(time_str)
 
@@ -79,7 +82,7 @@ def parse_answer(line):
 def main():
     dirty_list = read_file()
     list = parse_data(dirty_list)
-    print(list)
+    # print(list)
 
     ans_list = calc_answer(list)
 
@@ -88,7 +91,7 @@ def main():
             continue
 
         ans["answer"].total_seconds()
-        print(f'{ans["name"]} {ans["answer"].total_seconds()}')
+        print(f'{ans["name"]} {int(ans["answer"].total_seconds())}sec')
 
 if __name__ == "__main__":
     main()
